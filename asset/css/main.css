@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========== Typography ========== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* ========== Setting ========== */
+:root {
+    /* ========== font size ========== */
+    --main-font: "Montserrat", sans-serif;
+    --large-fs: 60px;
+    --medium-fs: 45px;
+    --normal-fs: 20px;
+    --small-fs: 18px;
+    --smaller-fs: 15px;
+    --header-fs: 30px;
+    --sub-header-fs: 25px;
+
+    /* ========== Color ========== */
+    --white: #ffff;
+    --black: #1E1E1E;
+    --light-silver: #EBEBEB;
+    --light-gold: #FEDD56;
+}
+
+
+/* ========== Base ========== */
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button {
+    font-family: var(--main-font);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.heading {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: var(--large-fs);
+    font-weight: 900;
+    padding-bottom: 1rem;
+}
+
+input {
+    text-transform: capitalize;
+}

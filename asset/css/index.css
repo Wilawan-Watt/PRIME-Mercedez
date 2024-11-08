@@ -1,0 +1,975 @@
+/* ========== Import setting main.css ========== */
+@import './main.css';
+
+
+/* ========== Header Start ========== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 45px;
+    width: 100%;
+    height: 125px;
+    background-color: var(--black);
+    /* position: fixed;
+    overflow: hidden;
+    box-shadow: 2px 10px 5px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000; */
+}
+
+.nav_logo {
+    display: flex;
+    align-items: center;
+    font-size: var(--header-fs);
+    font-weight: 700;
+    color: var(--white);
+
+    img {
+        padding-right: .8rem;
+    }
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    padding: 0 20px;
+}
+
+.nav_link {
+    font-size: var(--normal-fs);
+    color: var(--white);
+    padding: 0 1rem;
+}
+
+.nav_link:hover {
+    font-weight: 900;
+    color: var(--light-gold);
+}
+
+.nav_login {
+    width: 90px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: var(--white);
+    font-size: var(--normal-fs);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.nav_login:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* ========== Animated Menu Icon ========== */
+.animated_container {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: var(--white);
+    margin: 6px 0;
+    transition: .4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+    transition: .4s;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+    transition: .4s;
+}
+
+/* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 1024px) {
+    .header {
+        width: 100%;
+    }
+
+    .nav_logo {
+        font-size: var(--normal-fs);
+
+        img {
+            width: 90px;
+        }
+    }
+
+    .nav_menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: hsla(0, 0%, 6%, 0.6);
+        backdrop-filter: blur(50px);
+        width: 70%;
+        height: 100%;
+        z-index: 999;
+        padding: 10rem 0;
+        flex-direction: column;
+        text-align: center;
+
+        li {
+            padding: 1rem;
+        }
+    }
+
+    .show-menu {
+        right: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .animated_container {
+        display: none;
+    }
+}
+
+/* ========== Header End ========== */
+
+/* ========== Main section Start ========== */
+/* ---------- Banner ---------- */
+.banner {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-silver);
+}
+
+.image_banner {
+    width: 100%;
+}
+
+.button_banner {
+    display: flex;
+    justify-content: center;
+}
+
+.banner_btn {
+    width: 180px;
+    height: 45px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2);
+    font-size: var(--normal-fs);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.banner_btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* ********** Mobile screen responsive ********** */
+/* @media screen and (max-width: 430px) {
+    .banner {
+        height: fit-content;
+        padding: 50px 0;
+    }
+
+    .heading, .button_banner {
+        scale: .7;
+    }
+
+    .image_banner {
+        max-width: 300px;
+    }
+} */
+
+@media screen and (max-width: 1024px) {
+    .banner {
+        width: 100%;
+        max-height: 500px;
+    }
+
+    .heading {
+        font-size: var(--medium-fs);
+    }
+}
+
+/* ---------- Information ---------- */
+.information {
+    width: 100%;
+    height: 345px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.info_wrapper {
+    width: 300px;
+    height: 130px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_icon {
+    width: 85px;
+    height: 85px;
+    background-color: var(--light-silver);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.info_text {
+    padding-left: 1.5rem;
+
+    p {
+        font-size: var(--normal-fs);
+    }
+}
+
+/* ********** Mobile screen responsive ********** */
+/* @media screen and (max-width: 430px) {
+    .information {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .info_wrapper {
+        max-width: 250px;
+    }
+
+    .info_text {
+        font-size: var(--smaller-fs);
+        padding-left: .5rem;
+    }
+} */
+
+@media screen and (max-width: 1024px) {
+    .information {
+        width: 100%;
+        height: fit-content;
+        padding: 3rem 0;
+    }
+
+    .info_container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ---------- Popular Vehicles ---------- */
+.vehicle {
+    width: 100%;
+    height: 100vh;
+    /* padding-top: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vehicle_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vehicle_image {
+    width: 250px;
+}
+
+.vehicle_text {
+    text-align: center;
+    text-transform: capitalize;
+    width: 250px;
+
+    h3 {
+        font-size: var(--normal-fs);
+        padding: .5rem;
+    }
+
+    h4 {
+        font-size: var(--small-fs);
+
+        span {
+            font-weight: 200;
+        }
+    }
+
+    p {
+        font-size: var(--small-fs);
+        font-weight: 200;
+        padding: .5rem;
+    }
+}
+
+.detail_btn {
+    width: 140px;
+    height: 40px;
+    background-color: var(--black);
+    border-radius: 10px;
+    font-size: var(--smaller-fs);
+    font-weight: 700;
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+/* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 550px) {
+    .vehicle {
+        height: fit-content;
+        padding: 50px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .vehicle {
+        width: 100%;
+        height: fit-content;
+        padding: 50px;
+    }
+}
+
+/* ---------- Our Services ---------- */
+.service {
+    width: 100%;
+    height: fit-content;
+    padding: 40px;
+    background-color: var(--black);
+
+    .heading {
+        color: var(--white);
+    }
+}
+
+.service_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px 100px;
+    gap: 15px;
+}
+
+.service_wrapper {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: fit-content;
+}
+
+.service_image {
+    width: 400px;
+}
+
+.service_overlay {
+    height: 200px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    bottom: 0;
+    transition: .5s;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service_overlay:hover {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service_text {
+    font-size: var(--normal-fs);
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--white);
+
+    p {
+        font-size: var(--small-fs);
+        padding: 1rem;
+    }
+}
+
+.readmore_btn {
+    width: 145px;
+    height: 40px;
+    background-color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: var(--small-fs);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+/* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 430px) {
+    .service_container {
+        max-width: 430px;
+    }
+
+    .service_image {
+        max-width: 250px;
+    }
+
+    .service_overlay {
+        width: 250px;
+    }
+
+    .service_text {
+        h3 {
+            padding: .5rem;
+        }
+        p {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .service_overlay {
+        height: 160px;
+    }
+    
+    .service_text {
+        scale: .7;
+    }
+    
+    .readmore_btn {
+        font-size: var(--smaller-fs);
+        width: 125px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .service {
+        width: 100%;
+        height: fit-content;
+        display: inline-block;
+        justify-items: center;
+    }
+
+    .service_container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ---------- For Sell - Featured Cars ---------- */
+.for-sell {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.for-sell_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.for-sell_heading {
+    font-size: var(--medium-fs);
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+    padding-bottom: .8rem;
+}
+
+.for-sell_wrapper {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sell_image {
+    width: 350px;
+}
+
+.for-sell_overlay {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: 170px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.for-sell_overlay:hover {
+    height: 100%;
+    transition: .5s;
+}
+
+.for-sell_text {
+    color: var(--white);
+    text-transform: capitalize;
+    text-align: center;
+    text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.6);
+    padding: .5rem;
+
+    h3 {
+        font-size: var(--small-fs);
+        padding-bottom: .5rem;
+    }
+
+    .for-sell_price {
+        font-size: var(--small-fs);
+        font-weight: 700;
+        padding-bottom: .8rem;
+    }
+}
+
+.for-sell_rate {
+    color: var(--light-gold);
+    font-size: var(--normal-fs);
+    padding-bottom: .5rem;
+}
+
+/* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 550px) {
+    .sell_image, .for-sell_overlay {
+        max-width: 300px
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .for-sell {
+        width: 100%;
+        height: fit-content;
+        padding: 50px 0;
+    }
+}
+
+/* ---------- For Rent - Featured Cars ---------- */
+.for-rent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.for-rent_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.for-rent_heading {
+    font-size: var(--medium-fs);
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.for-rent_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rent_image {
+    width: 350px;
+    border: 1px solid var(--black);
+}
+
+.for-rent_text {
+    color: var(--black);
+    text-transform: capitalize;
+    text-align: center;
+    padding: .5rem;
+    position: absolute;
+    bottom: 0;
+
+    h3 {
+        font-size: var(--small-fs);
+        padding-bottom: .5rem;
+    }
+
+    .for-rent_price {
+        font-size: var(--small-fs);
+        font-weight: 700;
+        padding-bottom: .8rem;
+    }
+}
+
+.for-rent_rate {
+    color: var(--light-gold);
+    font-size: var(--normal-fs);
+    padding-bottom: .5rem;
+}
+
+/* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 550px) {
+    .rent_image {
+        max-width: 300px
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .for-rent {
+        width: 100%;
+        height: fit-content;
+        padding: 50px 0;
+    }
+}
+
+/* ---------- Subscribe ---------- */
+.subscribe {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe_banner {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.subscribe_text {
+    text-align: center;
+
+    h2 {
+        font-size: var(--header-fs);
+        text-transform: capitalize;
+    }
+
+    p {
+        padding: 1rem;
+    }
+}
+
+input[type="email"].subscribe_form {
+    font-size: var(--smaller-fs);
+    padding: .5rem 1.5rem;
+    width: 80%;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="submit"].subscribe_form {
+    border-radius: 30px;
+    border: none;
+    background-color: var(--black);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100px;
+    height: 35px;
+    margin: .5rem 0;
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 1024px) {
+    .subscribe {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* ---------- Client's Review ---------- */
+.review {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
+
+.review_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .heading {
+        color: var(--white);
+    }
+}
+
+.review_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+    height: 420px;
+    background-color: var(--white);
+    padding: 40px;
+}
+
+.reviwer_image {
+    border-radius: 50%;
+    width: 180px;
+}
+
+.review_text {
+    text-transform: capitalize;
+    text-align: center;
+    padding: .8rem;
+
+    h2 {
+        padding: .8rem;
+    }
+}
+
+.review_rate {
+    font-size: var(--normal-fs);
+    color: var(--light-gold);
+    text-shadow: 1px 3px 1px rgba(144, 160, 0, 0.5);
+}
+
+/* ********** Mobile screen responsive ********** */
+/* @media screen and (max-width: 430px) {
+    .review_wrapper {
+        max-width: 300px;
+    }
+} */
+
+@media screen and (max-width: 550px) {
+    .review_wrapper {
+        scale: .7;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .review {
+        width: 100%;
+        height: fit-content;
+        padding: 50px 0;
+    }
+}
+
+/* ---------- Contact Us ---------- */
+.contact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px 150px;
+    gap: 20px;
+}
+
+.contact_getform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 450px;
+    background-color: var(--black);
+
+    h2 {
+        text-transform: capitalize;
+        font-size: var(--header-fs);
+        color: var(--white);
+        padding-bottom: 2rem;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact_form {
+    width: 300px;
+    height: 35px;
+}
+
+input[type="text"].contact_form {
+    padding: 1rem;
+}
+
+input[type="email"].contact_form {
+    margin: .8rem 0;
+    padding: 1rem;
+}
+
+input[type="text"].contact_message {
+    width: 300px;
+    height: 120px;
+    margin: .8rem 0;
+    padding: 1rem;
+}
+
+input[type="submit"].contact_form {
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--light-gold);
+    font-size: var(--smaller-fs);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 430px) {    
+    .contact_map, .contact_getform {
+        scale: .8;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .contact {
+        width: 100%;
+        height: fit-content;
+        padding: 50px 0;
+    }
+
+    .contact_wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+    }
+
+    .contact_map {
+        iframe {
+            max-width: 350px;
+            max-height: 350px;
+        }
+    }
+
+    .contact_getform {
+        width: 350px;
+    }
+}
+
+/* ========== Main section End ========== */
+
+/* ========== Footer section Start ========== */
+footer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    color: var(--white);
+    /* padding: 10px; */
+}
+
+.footer_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    img {
+        width: 200px;
+    }
+
+    p {
+        text-transform: capitalize;
+        font-size: var(--sub-header-fs);
+        font-weight: 700;
+        padding-bottom: 1.5rem;
+    }
+
+    li {
+        padding: .5rem;
+    }
+
+    i {
+        padding-right: .5rem;
+        font-size: var(--normal-fs);
+    }
+
+    a {
+        font-size: var(--small-fs);
+        color: var(--white);
+    }
+}
+
+.footer_branches a {
+    text-transform: capitalize;
+}
+
+.footer_link a {
+    text-transform: capitalize;
+}
+
+.contact_socialmedia {
+    padding-top: 4rem;
+    cursor: pointer;
+}
+
+.footer_allright {
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+/* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 1024px) {
+    footer {
+        width: 100%;
+        height: fit-content;
+        padding: 80px 0;
+    }
+
+    .footer_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer_wrapper img {
+        display: none;
+    }
+
+    .footer_link {
+        display: none;
+    }
+
+    .footer_contact {
+        /* grid-column: 2 / 3; */
+        padding: 2rem 0;
+    }
+}
+
+/* ========== Footer section End ========== */
