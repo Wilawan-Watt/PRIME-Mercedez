@@ -15,6 +15,21 @@ function toggleMenu() {
 animatedContainer.addEventListener("click", toggleMenu);
 
 
+
+// =============== Remove Menu mobile ===============
+const navLink = document.querySelectorAll('.nav_link');
+const animatedChange = document.getElementById("animated-container");
+
+const linkAction = () => {
+    const navMenu = document.getElementById('nav-menu')
+    // When you click on each nav_link, you remove the show-menu class
+    navMenu.classList.remove('show-menu');
+    animatedChange.classList.toggle("change");
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
+
 // =============== Add Blur Header ===============
 const blurHeader = () => {
   const header = document.getElementById('header');
