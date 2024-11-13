@@ -808,11 +808,13 @@ input[type="submit"].subscribe_form {
 }
 
 .contact_wrapper {
-    display: grid;
+    display: flex;
     align-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 15px 150px;
-    gap: 20px;
+    justify-content: center;
+}
+
+.contact_map {
+    padding: 1rem;
 }
 
 .contact_getform {
@@ -835,6 +837,7 @@ input[type="submit"].subscribe_form {
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
