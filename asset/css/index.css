@@ -8,7 +8,8 @@
         scale: .8;
     }
 
-    .for-sell_heading, .for-rent_heading {
+    .for-sell_heading,
+    .for-rent_heading {
         scale: .7;
     }
 }
@@ -168,7 +169,7 @@
         top: 0;
         left: 0;
         z-index: 0;
-    }    
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -570,6 +571,7 @@
 
 /* ********** Mobile screen responsive ********** */
 @media screen and (max-width: 550px) {
+
     .sell_image,
     .for-sell_overlay {
         max-width: 300px
@@ -1000,8 +1002,12 @@ footer {
     }
 
     .footer_contact {
-        /* grid-column: 2 / 3; */
         padding: 2rem 0;
+    }
+
+    .footer_allright {
+        position: relative;
+        top: 30px;
     }
 }
 
