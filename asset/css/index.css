@@ -2,6 +2,17 @@
 @import './main.css';
 
 
+/* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 1024px) {
+    .heading {
+        scale: .8;
+    }
+
+    .for-sell_heading, .for-rent_heading {
+        scale: .7;
+    }
+}
+
 /* ========== Header Start ========== */
 .header {
     display: flex;
@@ -11,10 +22,6 @@
     width: 100%;
     height: 125px;
     background-color: var(--black);
-    /* position: fixed;
-    overflow: hidden;
-    box-shadow: 2px 10px 5px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1000; */
 }
 
 .nav_logo {
@@ -95,17 +102,33 @@
 }
 
 /* ********** Mobile screen responsive ********** */
+@media screen and (max-width: 550px) {
+    .animated_container {
+        position: fixed;
+        left: 80%;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .header {
         width: 100%;
+        height: fit-content;
+        position: fixed;
+        z-index: 999;
     }
 
     .nav_logo {
-        font-size: var(--normal-fs);
+        font-size: var(--smaller-fs);
 
         img {
-            width: 90px;
+            width: 50px;
         }
+    }
+
+    .animated_container {
+        scale: .8;
+        position: fixed;
+        right: 8%;
     }
 
     .nav_menu {
@@ -117,7 +140,7 @@
         width: 70%;
         height: 100%;
         z-index: 999;
-        padding: 10rem 0;
+        padding: 7rem 0;
         flex-direction: column;
         text-align: center;
 
@@ -129,9 +152,22 @@
     .show-menu {
         right: 0;
     }
+
+    /* ---------- Add blur header ---------- */
+    .blur-header::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: hsla(0, 0%, 6%, 0.1);
+        box-shadow: 1px 0 10px #7a7a7a6c;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }    
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
     .animated_container {
         display: none;
     }
@@ -176,21 +212,6 @@
 }
 
 /* ********** Mobile screen responsive ********** */
-/* @media screen and (max-width: 430px) {
-    .banner {
-        height: fit-content;
-        padding: 50px 0;
-    }
-
-    .heading, .button_banner {
-        scale: .7;
-    }
-
-    .image_banner {
-        max-width: 300px;
-    }
-} */
-
 @media screen and (max-width: 1024px) {
     .banner {
         width: 100%;
@@ -247,22 +268,6 @@
 }
 
 /* ********** Mobile screen responsive ********** */
-/* @media screen and (max-width: 430px) {
-    .information {
-        width: 100%;
-        height: fit-content;
-    }
-
-    .info_wrapper {
-        max-width: 250px;
-    }
-
-    .info_text {
-        font-size: var(--smaller-fs);
-        padding-left: .5rem;
-    }
-} */
-
 @media screen and (max-width: 1024px) {
     .information {
         width: 100%;
@@ -424,21 +429,27 @@
 /* ********** Mobile screen responsive ********** */
 @media screen and (max-width: 430px) {
     .service_container {
-        max-width: 430px;
+        max-width: fit-content;
+    }
+
+    .service_wrapper {
+        max-width: 200px;
     }
 
     .service_image {
-        max-width: 250px;
+        max-width: 200px;
     }
 
     .service_overlay {
-        width: 250px;
+        width: 200px;
+        height: 50%;
     }
 
     .service_text {
         h3 {
             padding: .5rem;
         }
+
         p {
             display: none;
         }
@@ -449,11 +460,11 @@
     .service_overlay {
         height: 160px;
     }
-    
+
     .service_text {
         scale: .7;
     }
-    
+
     .readmore_btn {
         font-size: var(--smaller-fs);
         width: 125px;
@@ -553,7 +564,9 @@
 
 /* ********** Mobile screen responsive ********** */
 @media screen and (max-width: 550px) {
-    .sell_image, .for-sell_overlay {
+
+    .sell_image,
+    .for-sell_overlay {
         max-width: 300px
     }
 }
@@ -648,17 +661,21 @@
 /* ---------- Subscribe ---------- */
 .subscribe {
     width: 100%;
-    height: 200px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(../image/PRIME-Mercedez-PRIME_Car-banner-subscribe.png);
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
-.subscribe_banner {
+/* .subscribe_banner {
     position: absolute;
     width: 100%;
     z-index: -1;
-}
+} */
 
 .subscribe_text {
     text-align: center;
@@ -700,6 +717,10 @@ input[type="submit"].subscribe_form {
     .subscribe {
         width: 100%;
         height: 250px;
+    }
+
+    .subscribe_text {
+        scale: .8;
     }
 }
 
@@ -757,11 +778,11 @@ input[type="submit"].subscribe_form {
 }
 
 /* ********** Mobile screen responsive ********** */
-/* @media screen and (max-width: 430px) {
+@media screen and (max-width: 430px) {
     .review_wrapper {
-        max-width: 300px;
+        max-width: 350px;
     }
-} */
+}
 
 @media screen and (max-width: 550px) {
     .review_wrapper {
@@ -850,8 +871,10 @@ input[type="submit"].contact_form {
 }
 
 /* ********** Mobile screen responsive ********** */
-@media screen and (max-width: 430px) {    
-    .contact_map, .contact_getform {
+@media screen and (max-width: 430px) {
+
+    .contact_map,
+    .contact_getform {
         scale: .8;
     }
 }
@@ -949,7 +972,7 @@ footer {
     footer {
         width: 100%;
         height: fit-content;
-        padding: 80px 0;
+        padding: 80px 50px;
     }
 
     .footer_wrapper {

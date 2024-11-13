@@ -13,3 +13,18 @@ function toggleMenu() {
 
 // เพิ่ม event listener สำหรับคลิกที่ hamburger icon
 animatedContainer.addEventListener("click", toggleMenu);
+
+
+// =============== Add Blur Header ===============
+const blurHeader = () => {
+  const header = document.getElementById('header');
+  if (window.scrollY >= 50) {
+    header.classList.add('blur-header');
+    console.log("Added blur-header");
+  } else {
+    header.classList.remove('blur-header');
+    console.log("Removed blur-header");
+  }
+}
+window.addEventListener('scroll', blurHeader);
+
